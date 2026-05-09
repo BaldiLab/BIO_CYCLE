@@ -116,7 +116,7 @@ def get_trajs_null(tps_targ: List[float]):
     tps_targ = np.array([x - min_tp_targ for x in tps_targ])
 
     # get null trajs
-    mean_trajs_file: str = "/home/kchangiz/codebase/BIO_CYCLE_2/null_dist/mean_traj.pkl"
+    mean_trajs_file: str = "./null_dist/mean_traj.pkl"
     trajs_null_l: List[Trajectory] = pickle.load(open(mean_trajs_file, "rb"))
     print("shape of trajectory_l:\t", len(trajs_null_l))
     trajs_null: np.ndarray = np.stack([np.array(traj.mean) for traj in trajs_null_l], axis=0)
